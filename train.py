@@ -21,7 +21,7 @@ plt.rcParams['font.family'] = 'Palatino Linotype'
 cv = KFold(n_splits=5, shuffle=True, random_state=123)
 
 # # 加载数据
-# file_path = 'table/fishnet_30x30_processed_feature_engineered.csv'
+# file_path = 'data\Grid-Based_Featur-Engineered_data\fishnet_30x30_processed_feature_engineered.csv'
 # df = pd.read_csv(file_path)
 # X = df.iloc[1:, 0:-1]
 # y = df.iloc[1:, -1].values
@@ -55,7 +55,7 @@ cv = KFold(n_splits=5, shuffle=True, random_state=123)
 # )
 #
 # # 保存模型为pkl
-# model_path = r"E:\Desktop\5Gsimulation_XGboost\pythonProject\xgb_optuna_model_processed_feature_engineered.pkl"
+# model_path = r"xgb_optuna_model_processed_feature_engineered.pkl"
 # joblib.dump(model, model_path)
 # print(f"Model saved to {model_path}")
 
@@ -282,7 +282,7 @@ def plot_pdp_selected_features(
         plt.grid(True)
         plt.tight_layout()
         # 保存图片，路径和文件名可根据需要修改
-        save_path = fr"E:\Desktop\Supplementary picture\PDP_{feat}.png"
+        save_path = fr"PDP_{feat}.png"
         plt.savefig(save_path, dpi=300, bbox_inches='tight')
         plt.show()
 
@@ -305,8 +305,8 @@ def plot_pdp_selected_features(
 # print("调参完成，最佳参数：", best_params)
 # print(f"最佳验证集RMSE: {best_rmse:.4f}")
 # SHAP使用示例
-model_path = r"E:\Desktop\5Gsimulation_XGboost\pythonProject\xgb_optuna_model_processed_feature_engineered.pkl"
-csv_path = r"table/fishnet_30x30_processed_feature_engineered.csv"
+model_path = r"xgb_optuna_model_processed_feature_engineered.pkl"
+csv_path = r"data\Grid-Based_Featur-Engineered_data\fishnet_30x30_processed_feature_engineered.csv"
 # #
 shap_selected_features(model_path, csv_path, selected_features=None)
 # plot_pdp_selected_features(model_path, csv_path)
