@@ -1,0 +1,21 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "compilerOptions": {
+    "noEmitOnError": false,      // ❌ 即使有错误也生成 JS 文件（关键！）
+    "noUnusedLocals": false,     // ✅ 允许未使用的局部变量
+    "noUnusedParameters": false, // ✅ 允许未使用的参数
+    "strict": false              // ❌ 关闭严格模式（慎用，会降低类型检查力度）
+  }
+}
