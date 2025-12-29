@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "pinia": "^3.0.3",
+    "workerpool": "^9.3.2"
+  }
+}
